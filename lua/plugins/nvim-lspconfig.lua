@@ -118,6 +118,13 @@ return {
       },
 
       astro = {},
+
+      clangd = {
+        cmd = { 'clangd', '--background-index' },
+        filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+        root_dir = require('lspconfig.util').root_pattern('compile_commands.json', '.git', '.'),
+      },
+
       --rust_analyzer = {
       --  settings = {
       --    ['rust-analyzer'] = {
@@ -142,7 +149,7 @@ return {
 
     require('mason-lspconfig').setup {
       automatic_enable = {
-        exclude = { 'luau_lsp', 'rust_analyzer' },
+        exclude = { 'luau_lsp', 'rust_analyzer', 'roslyn' },
       },
     }
 
@@ -150,6 +157,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua',
       'astro',
+      'clangd',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     for server_name, server_config in pairs(servers) do

@@ -92,7 +92,7 @@ return { -- Autocompletion
     -- the rust implementation via `'prefer_rust_with_warning'`
     --
     -- See :h blink-cmp-config-fuzzy for more information
-    fuzzy = { implementation = 'lua' },
+    fuzzy = { prebuilt_binaries = { download = true } },
 
     -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true },

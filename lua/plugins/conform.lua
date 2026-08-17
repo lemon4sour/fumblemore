@@ -34,6 +34,7 @@ return { -- Autoformat
       typescript = { 'prettier' },
       css = { 'prettier' },
       markdown = { 'prettier', stop_after_first = true },
+      sql = { 'sqruff' },
     },
   },
 }

@@ -75,4 +75,6 @@ do
     vim.cmd 'terminal' -- open terminal
     vim.cmd 'startinsert' -- enter insert mode
   end, { noremap = true, silent = true, desc = 'Open Quick Terminal' })
+  vim.keymap.set('n', '<leader>bn', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+  vim.keymap.set('n', '<leader>bN', '<Cmd>BufferNext<CR>', { desc = 'Previous Buffer' })
 end
